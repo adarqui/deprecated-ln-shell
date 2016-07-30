@@ -1,0 +1,57 @@
+name:                ln-shell
+version:             0.1.0.0
+synopsis:            leuron shell
+description:         leuron shell
+license:             MIT
+license-file:        LICENSE
+author:              Andrew Darqui
+maintainer:          andrew.darqui@gmail.com
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+
+Flag dev
+    Description:   Turn on development settings, like auto-reload templates.
+    Default:       False
+
+
+Flag library-only
+    Description:   Build for use with "yesod devel"
+    Default:       False
+
+
+library
+  exposed-modules:     Shell
+                       Shell.Api
+                       Shell.Api.Bucket
+                       Shell.Api.Leuron
+                       Shell.Api.Organization
+                       Shell.Api.RBrowse
+                       Shell.Api.Reminder
+                       Shell.Api.Resource
+                       Shell.Api.Test
+                       Shell.Api.Team
+                       Shell.Editor
+                       Shell.Leuron
+                       Shell.Leuron.Display
+                       Shell.Main
+                       Shell.Types
+  build-depends:       base >=4.8 && <4.9, Shellac >= 0.9.5.2, Shellac-haskeline, text, wreq, aeson, lens-aeson, lens, bytestring, http-client, transformers, mtl, GenericPretty >= 1.2.1, wl-pprint >= 1.2, temporary >= 1.2.0.3, process >= 1.2.3.0, directory, random, random-extras, random-fu, random-source, ln-lib, ln-types
+  hs-source-dirs:      src
+  default-extensions:  OverloadedStrings
+                       RecordWildCards
+  default-language:    Haskell2010
+
+
+executable ln-shell
+
+    if flag(library-only)
+        Buildable: False
+
+    main-is:            main.hs
+    hs-source-dirs:     app
+    build-depends:      base, ln-shell
+    default-extensions: OverloadedStrings
+                        RecordWildCards
+
+    ghc-options:        -threaded -O2 -rtsopts -with-rtsopts=-N

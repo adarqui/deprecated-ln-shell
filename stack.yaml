@@ -1,0 +1,9 @@
+flags: {}
+packages:
+- '.'
+- '../ln-types'
+- '../ln-lib'
+- '../Shellac-0.9.5.2'
+- '../Shellac-haskeline-0.2.0.2'
+extra-deps: [random-extras-0.19]
+resolver: lts-3.2

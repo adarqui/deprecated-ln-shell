@@ -1,0 +1,18 @@
+~/.haskeline:
+- http://trac.haskell.org/haskeline/wiki/UserPrefs
+
+
+unicode:
+- https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts
+- http://symbolcodes.tlt.psu.edu/bylanguage/mathchart.html
+- http://www.fileformat.info/info/unicode/block/superscripts_and_subscripts/list.htm
+- http://unicode-search.net/unicode-namesearch.pl?term=subscript
+
+
+shellac needs:
+- histories specific to shells/sub shells
+- command line building tools, so that you can access everything via cli options
+
+
+random:
+*Shell Data.Random Data.Random.Source.DevRandom Data.Random.Extras T> runRVar (choice [1,2,3]) DevRandom

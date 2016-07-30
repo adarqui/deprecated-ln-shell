@@ -1,0 +1,5 @@
+add resources
+add leurons
+- fact
+add bucket
+subs/splits training on bucket
